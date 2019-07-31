@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const db = require('../models/ZagatData.js')
+
 
 const app = express();
 const PORT = 3333;
@@ -16,8 +18,21 @@ app.use(express.static(__dirname + '/../client/dist'));
 // middleware as necessary
 
 app.get('/', function (req, res, next) {
-    console.log('test successful!');
-    res.end();
+    db.getRestaurant(req.body.input, (restaurantData => {
+      res.send(restaurantData)
+    }))
+});
+
+app.post('/', function (req, res, next) {
+  db.addRestaurant(req.body.input, (restaurantData => {
+    res.send(restaurantData)
+  }))
+});
+
+app.put('/', function (req, res, next) {
+  db.addRestaurant(req.body.input, (restaurantData => {
+    res.send(restaurantData)
+  }))
 });
 
 app.listen(process.env.PORT || 3333, () => {

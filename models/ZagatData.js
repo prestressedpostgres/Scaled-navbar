@@ -2,12 +2,13 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-mongoose.connect('mongodb://localhost:3000/FEC', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/SDC', { useNewUrlParser: true });
 var db = mongoose.connection;
 
 var ZagatSchema = new Schema({
+    name: String,
     city: String,
     state: String
 })
 
-module.exports = db;
+module.exports = {db, ZagatSchema};
