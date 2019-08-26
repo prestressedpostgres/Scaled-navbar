@@ -3,3 +3,6 @@ node_modules
 models/csvData
 # Exclude .devspace generated files
 .devspace/
+
+env/.env
+

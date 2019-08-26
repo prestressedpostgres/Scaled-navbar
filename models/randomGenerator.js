@@ -16,53 +16,53 @@ const path = require('path');
  }
 
  const csvWrite1MM = createCsvWriter({
-    path: path.join(__dirname, './csvData/data0-1MM.csv'),
-    header: ['name', 'city','state']
+    path: path.join(__dirname, './csvData/data0MM-1MM.csv'),
+    header: [{id:'name', title: 'name'},{id:'city',title:'city'},{id:'state',title:'state'}]
 });
 
  const csvWrite2MM = createCsvWriter({
     path: path.join(__dirname, './csvData/data1MM-2MM.csv'),
-    header: ['name', 'city','state']
+    header: [{id:'name', title: 'name'},{id:'city',title:'city'},{id:'state',title:'state'}]
 });
 
  const csvWrite3MM = createCsvWriter({
     path: path.join(__dirname, './csvData/data2MM-3MM.csv'),
-    header: ['name', 'city','state']
+    header: [{id:'name', title: 'name'},{id:'city',title:'city'},{id:'state',title:'state'}]
 });
 
  const csvWrite4MM = createCsvWriter({
-    path: path.join(__dirname, './csvData/data3-4MM.csv'),
-    header: ['name', 'city','state']
+    path: path.join(__dirname, './csvData/data3MM-4MM.csv'),
+    header: [{id:'name', title: 'name'},{id:'city',title:'city'},{id:'state',title:'state'}]
 });
 
  const csvWrite5MM = createCsvWriter({
     path: path.join(__dirname, './csvData/data4MM-5MM.csv'),
-    header: ['name', 'city','state']
+    header: [{id:'name', title: 'name'},{id:'city',title:'city'},{id:'state',title:'state'}]
 });
 
  const csvWrite6MM = createCsvWriter({
     path: path.join(__dirname, './csvData/data5MM-6MM.csv'),
-    header: ['name', 'city','state']
+    header: [{id:'name', title: 'name'},{id:'city',title:'city'},{id:'state',title:'state'}]
 });
 
  const csvWrite7MM = createCsvWriter({
     path: path.join(__dirname, './csvData/data6MM-7MM.csv'),
-    header: ['name', 'city','state']
+    header: [{id:'name', title: 'name'},{id:'city',title:'city'},{id:'state',title:'state'}]
 });
 
  const csvWrite8MM = createCsvWriter({
     path: path.join(__dirname, './csvData/data7MM-8MM.csv'),
-    header: ['name', 'city','state']
+    header: [{id:'name', title: 'name'},{id:'city',title:'city'},{id:'state',title:'state'}]
 });
 
  const csvWrite9MM = createCsvWriter({
     path: path.join(__dirname, './csvData/data8MM-9MM.csv'),
-    header: ['name', 'city','state']
+    header: [{id:'name', title: 'name'},{id:'city',title:'city'},{id:'state',title:'state'}]
 });
 
 const csvWrite10MM = createCsvWriter({
     path: path.join(__dirname, './csvData/data9MM-10MM.csv'),
-    header: ['name', 'city','state']
+    header: [{id:'name', title: 'name'},{id:'city',title:'city'},{id:'state',title:'state'}]
 });
 csvWrite1MM.writeRecords(generateFakeData())       // returns a promise
     .then(() => {
@@ -70,6 +70,7 @@ csvWrite1MM.writeRecords(generateFakeData())       // returns a promise
     });
 
     Promise.resolve()
+    .then(() => csvWrite1MM.writeRecords(generateFakeData()))
     .then(() => csvWrite1MM.writeRecords(generateFakeData()))
     .then(() => csvWrite1MM.writeRecords(generateFakeData()))
     .then(() => csvWrite1MM.writeRecords(generateFakeData()))
