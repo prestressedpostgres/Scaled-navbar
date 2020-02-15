@@ -59,7 +59,7 @@
     "reactstrap": "^8.0.1",
     "sass": "^1.22.3",
     "webkit-npm": "^3.1.1",
-    "yarn": "^1.17.3"
+    "yarn": "^1.22.0"
   },
   "presets": [
     "@babel/preset-env",
